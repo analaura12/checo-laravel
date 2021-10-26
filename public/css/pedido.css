@@ -1,0 +1,94 @@
+/* 
+h1{
+    color: #223150;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.4px;
+    text-align: center;
+    font: 400  "Poppins", sans-serif;
+}
+
+h2 {
+    color: #223150;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.4px;
+    font: 400  "Poppins", sans-serif;
+}
+
+/*novo
+
+.boards {
+    display: flex;
+    font: 400 1rem/1.625rem "Poppins", sans-serif;
+    margin-top: 32px;
+    align-items: center;
+}
+
+.board {
+    background: #ffffff;
+    border: 1px solid #FD951F11;
+    border-radius: 4px;
+    font: 400 1rem/1.625rem "Poppins", sans-serif;
+    margin: 0 16px;
+}
+
+.board h3 {
+    padding: 16px;
+    margin: 0;
+    color: #5e6576;
+    text-align: center;
+}
+
+.dropzone {
+    padding: 16px;
+    min-width: 282px;
+    min-height: 200px;
+}
+
+.card {
+    background-color: #f05642;
+    padding: 16px;
+    box-shadow: 0 2px 2px -1px #f05642;
+    width: 250px;
+    margin: 25px 0;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.status {
+    width: 30px;
+    height: 8px;
+    background: #f05642;
+    margin-bottom: 16px;
+    border-radius: 8px;
+}
+
+.highlight {
+    background-color: #FD951F08;
+}
+
+.card,
+.dropzone {
+    transition: 400ms;
+}
+
+.is-dragging {
+    cursor: move;
+    opacity: 0.3;
+}
+
+.over {
+    background-color: #4cd13711;
+}
+
+.content {
+    color: #ffffff;
+    font: 400 1rem/1.625rem "Poppins", sans-serif;
+    text-align: center;
+}
+
+*/

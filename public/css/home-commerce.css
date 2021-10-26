@@ -1,0 +1,52 @@
+.circuloImagem {
+    background-color: #f05642;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+#movimentar {
+    position: relative;
+    top: 0;
+    padding: 4px;
+    transition: all .2s ease-in-out
+}
+
+#movimentar:hover {
+    top: -4px;
+    box-shadow: 0 4px 3px #f05642;
+}
+
+.estabelecimento {
+    padding-top: 14rem;
+    padding-bottom: 5rem;
+}
+
+.tiposEstabelecimento {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.bordaImagem {
+    border-radius: 15px;
+}
+
+#lista {
+    background-color: rgb(252, 250, 251);
+    color: rgb(94, 101, 118);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#link {
+    text-decoration: none;
+}
+
+.green {
+    font-weight: bold;
+    color: green;
+    font-size: 1.3rem;
+}

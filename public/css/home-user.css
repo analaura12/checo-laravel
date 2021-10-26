@@ -1,0 +1,88 @@
+#left {
+    text-align: left;
+}
+
+#right {
+    text-align: right;
+}
+
+#calendar {
+    background-color: white;
+    color: rgba(129, 126, 126, 0.877);
+    padding: 16px;
+    font-size: 16px;
+    border: 1px rgba(214, 209, 209, 0.877) solid;
+}
+
+::-webkit-calendar-picker-indicator {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23bbbbbb" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+}
+
+#botao {
+    background-color: #f05642;
+    border-radius: 4px;
+    border: 1px rgba(214, 209, 209, 0.877) solid;
+    color: white;
+    font-size: 14px;
+}
+
+#setinha {
+    color: #f05642;
+    font-size: 16px;
+}
+
+.dropbtn {
+    background-color: white;
+    color: f05642;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px rgba(214, 209, 209, 0.877) solid;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.877);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #f05642;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(214, 209, 209, 0.39)
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #f1f1f1;
+}
+
+.tipoComida {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.tipoEstabelecimento {
+    width: 900px;
+    margin: 0 auto;
+}
+
+#filtro {
+    width: 1000px;
+    margin: 0 auto;
+}
