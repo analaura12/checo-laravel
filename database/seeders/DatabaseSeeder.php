@@ -16,18 +16,18 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Laura',
-            'email' => 'laura@gmail.com',
+            'name' => 'Usuário',
+            'email' => 'admin@gmail.com',
             'cpf' => '46063627820',
             'cellphone' => '11942058156',
-            'password' => Hash::make( 'ana12345'),
+            'password' => Hash::make( 'admin123'),
         ]);
         DB::table('establishments')->insert([
             'name' => 'Estabelecimento',
-            'email' => 'ana@gmail.com',
+            'email' => 'admin@gmail.com',
             'cnpj' => '46063627820',
             'cellphone' => '11942058156',
-            'password' => Hash::make( 'ana12345'),
+            'password' => Hash::make( 'admin123'),
         ]);
     }
 }
