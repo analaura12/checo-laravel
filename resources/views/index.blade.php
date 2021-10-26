@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-4 col-12">
                 <div class="card">
                     <div class="card-icon">
                         <span class="fas fa-headphones-alt"></span>
@@ -42,7 +42,8 @@
                         <a class="read-more no-line" href="">Saiba mais <span class="fas fa-long-arrow-alt-right"></span></a>
                     </div>
                 </div>
-
+            </div>
+            <div class="col-lg-4 col-12">
                 <!-- Card -->
                 <div class="card">
                     <div class="card-icon red">
@@ -54,7 +55,8 @@
                         <a class="read-more no-line" href="">Saiba mais <span class="fas fa-long-arrow-alt-right"></span></a>
                     </div>
                 </div>
-
+            </div>
+            <div class="col-lg-4 col-12">
                 <!-- Card -->
                 <div class="card">
                     <div class="card-icon green">

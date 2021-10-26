@@ -54,14 +54,6 @@
         </div>
     </div>
 </div>
-<div id="services" class="cards-1 bg-red">
-    <div class="container">
-        <div class="col-lg-12">
-            <h2>Explore nossos serviços</h2>
-            <h6>Escolha um tipo de estabelecimento o qual deseja visitar:</h6>
-        </div>
-    </div>
-</div>
 <ul class="tipoComida">
     <li>
         <!-- Card -->
@@ -74,7 +66,7 @@
                 </a>
             </figure>
         </div>
-    </li>
+    {{--  </li>
     <li>
         <!-- Card -->
         <div class="card" style="width: 13rem;">
@@ -107,7 +99,7 @@
                 </a>
             </figure>
         </div>
-    </li>
+    </li>  --}}
 </ul>
 <div class="cards-1 bg-red">
     <div class="container">
@@ -129,7 +121,7 @@
                 </a>
             </figure>
         </div>
-    </li>
+    {{--  </li>
     <li>
         <!-- Card -->
         <div class="card" style="width: 12rem;">
@@ -184,7 +176,7 @@
                 </a>
             </figure>
         </div>
-    </li>
+    </li>  --}}
 </ul>
 
 <!-- Estabelecimentos -->
@@ -341,7 +333,7 @@
             </figure>
         </div>
     </li>
-    <li>
+    {{--  <li>
         <!-- Card -->
         <div class="card" style="width: 10rem;" id="navbarsExampleDefault">
             <figure class="figure">
@@ -441,7 +433,7 @@
                 </a>
             </figure>
         </div>
-    </li>
+    </li>  --}}
 </ul>
 
 <!-- Mais sobre nós -->
@@ -461,40 +453,41 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-4 col-12">
                 <div class="card">
-                    <div class="card-icon red">
-                        <span class="fas fa-clock"></span>
+                    <div class="card-icon">
+                        <span class="fas fa-headphones-alt"></span>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Poupamos o seu tempo de espera em fila</h5>
-                        <p>Não há mais a necessidade de esperar em filas, basta realizar a sua reserva online e curtir o
-                            momento com seus amigos na hora marcada.</p>
+                        <h5 class="card-title">Visibilidade do seu comércio</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
+                        <a class="read-more no-line" href="">Saiba mais <span class="fas fa-long-arrow-alt-right"></span></a>
                     </div>
                 </div>
-
+            </div>
+            <div class="col-lg-4 col-12">
                 <!-- Card -->
                 <div class="card">
                     <div class="card-icon red">
-                        <span class="fas fa-head-side-mask"></span>
+                        <span class="far fa-clipboard"></span>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Te ajudamos na proteção contra o Coronavirus</h5>
-                        <p>Nessa pandemia, o que menos queremos é estar em lugares muito aglomerados por conta do vírus.
-                            Com este website é possível evitar a aglomeração realizando reservas.</p>
+                        <h5 class="card-title">Oportunidade</h5>
+                        <p>Bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim. </p>
+                        <a class="read-more no-line" href="">Saiba mais <span class="fas fa-long-arrow-alt-right"></span></a>
                     </div>
                 </div>
-
+            </div>
+            <div class="col-lg-4 col-12">
                 <!-- Card -->
                 <div class="card">
-                    <div class="card-icon red">
-                        <span class="far fa-heart"></span>
+                    <div class="card-icon green">
+                        <span class="far fa-comments"></span>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Pensamos em você</h5><br>
-                        <p>No CHE CO é possível analisar os estabelecimentos e as refeições deles, com isso pode-se
-                            verificar se o orçamento cabe no seu bolso ou se há alguma coisa na comida que você não pode
-                            comer.</p>
+                        <h5 class="card-title">Reserve seus pedidos com antecedência!</h5>
+                        <p>At ultrices mi tempus imperdiet nulla malesuada. Auctor elit sed vulputate mi sit amet. </p>
+                        <a class="read-more no-line" href="">Saiba mais <span class="fas fa-long-arrow-alt-right"></span></a>
                     </div>
                 </div>
             </div>
