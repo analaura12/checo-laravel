@@ -26,6 +26,7 @@ class Establishment  extends Authenticatable
         'cnpj',
         'cellphone',
         'password',
+        'profile_image',
     ];
 
     /**

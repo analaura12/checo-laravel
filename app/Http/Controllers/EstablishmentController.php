@@ -30,6 +30,7 @@ class EstablishmentController extends Controller
 
     public function register(Request $request)
     {
+
         if($request->get('password') != $request->get('password_confirmation')){
             return redirect()->back()->withErrors(['errors' => 'Senhas diferentes'])->withInput();
         }
@@ -45,7 +46,14 @@ class EstablishmentController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $data = ['name' => $request->get('name'), 'email' => $request->get('email'), 'password' => Hash::make($request->get('password')), 'cnpj' => $request->get('cnpj'), 'cellphone' => $request->get('cellphone')];
+        $convertBase64 = function ($file) {
+            $imagedata = file_get_contents($file);
+            return base64_encode($imagedata);
+        };
+
+        $profile_image = $convertBase64($request['profile_image']);
+
+        $data = ['name' => $request->get('name'), 'email' => $request->get('email'), 'password' => Hash::make($request->get('password')), 'cnpj' => $request->get('cnpj'), 'cellphone' => $request->get('cellphone'), 'profile_image' => $profile_image];
 
         $response  = Establishment::create($data);
 

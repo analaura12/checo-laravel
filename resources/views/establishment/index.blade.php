@@ -22,7 +22,6 @@
                         <div class="card tale-bg">
                             <div class="card-people mt-auto">
                                 <img src="{{asset('images/dashboard/restaurante.jpg')}}" alt="people">
-                            
                             </div>
                         </div>
                     </div>
