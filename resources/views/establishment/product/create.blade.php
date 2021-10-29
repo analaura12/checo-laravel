@@ -21,7 +21,7 @@
                                         </h4>
                                         <a role="button" href="{{route('product')}}" class="btn btn-secondary">Retornar para listagem</a>
                                     </div>
-                                    <form class="form" method="POST" action="{{route('product.store')}}">
+                                    <form class="form" method="POST" action="{{route('product.store')}}" enctype="multipart/form-data">
                                         <div class="card-body">
                                                 @include('establishment.product.form')
                                         </div>

@@ -37,8 +37,16 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-        Product::create($request->all());
+        $product = $request->all();
+
+        $convertBase64 = function ($file) {
+            $imagedata = file_get_contents($file);
+            return base64_encode($imagedata);
+        };
+
+        $product['image'] = $convertBase64($product['image']);
+
+        Product::create($product);
         
         return redirect()->back()->with('success', 'Mesa cadastrada com sucesso!');
     }
@@ -75,7 +83,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $product = Product::find($id)->update($request->all());
+        $req = $request->all();
+
+        $convertBase64 = function ($file) {
+            $imagedata = file_get_contents($file);
+            return base64_encode($imagedata);
+        };
+
+        $req['image'] = $convertBase64($req['image']);
+
+        $product = Product::find($id)->update($req);
 
         if($product != true){
             return redirect()->back()->with('error', 'Erro ao atualizar dados do produto!');

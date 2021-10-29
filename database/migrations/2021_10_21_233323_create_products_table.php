@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('food_restriction');
             $table->string('number_people_served');
             $table->string('price');
+            $table->longText('image');
             $table->timestamps();
         });
     }
