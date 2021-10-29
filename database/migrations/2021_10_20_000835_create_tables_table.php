@@ -18,6 +18,10 @@ class CreateTablesTable extends Migration
             $table->string('number');
             $table->string('number_of_chairs');
             $table->string('description');
+
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('establishments');
+            
             $table->timestamps();
         });
     }

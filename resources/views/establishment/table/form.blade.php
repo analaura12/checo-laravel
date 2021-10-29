@@ -11,3 +11,5 @@
     <label for="">Descrição</label>
     <textarea class="form-control" id="" rows="3" name="description">{{isset($table->description) ? $table->description : ''}}</textarea>
 </div>
+
+<input type="hidden" name="user_id" value="{{auth()->guard('establishment')->user()->id}}">

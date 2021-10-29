@@ -23,6 +23,10 @@ class CreateProductsTable extends Migration
             $table->string('number_people_served');
             $table->string('price');
             $table->longText('image');
+
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('establishments');
+
             $table->timestamps();
         });
     }

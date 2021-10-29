@@ -15,7 +15,7 @@ class TableController extends Controller
      */
     public function index()
     {
-        $tables = Table::all();
+        $tables = Table::where('user_id', '=', auth()->guard('establishment')->user()->id)->get();
         return view('establishment.table.index')->with(compact('tables'));
     }
 
