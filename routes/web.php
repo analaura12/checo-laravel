@@ -21,6 +21,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::prefix('/management-products')->group(function ($router) {
         Route::get('/', ['as' => 'management.products', 'uses' => 'App\Http\Controllers\ProductUserController@index']);
     });
+    #Visualização de reservas
+    Route::prefix('/reserve')->group(function($router){
+        Route::get('/', ['as' => 'reserve', 'uses' => 'App\Http\Controllers\ReserveController@index']);
+    });
+            
 });
 
 #Rotas de Estabelecimentos
