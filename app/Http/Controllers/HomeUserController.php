@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
+use App\Models\Establishment;
+use App\Models\Product;
 
 class HomeUserController extends Controller
 {
-    /**
+    /** 
      * Create a new controller instance.
      *
      * @return void
@@ -23,6 +25,8 @@ class HomeUserController extends Controller
      */
     public function index()
     {
-        return view('user.home');
+        $establishments = Establishment::all();
+        $products = Product::all(); 
+        return view('user.home')-> with(compact('establishments', 'products'));  
     }
 }
