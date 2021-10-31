@@ -118,7 +118,7 @@
     <script src="{{ asset('js/home-commerce.js') }}"></script>
     <script src="{{ asset('js/statuspedido.js') }}"></script>
     
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    {{--  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>  --}}
     <script src="{{asset('vendors/js/vendor.bundle.base.js')}}"></script>
     <script src="{{asset('vendors/chart.js/Chart.min.js')}}"></script>
     <script src="{{asset('vendors/datatables.net/jquery.dataTables.js')}}"></script>
@@ -137,7 +137,7 @@
     <script type="text/javascript">   
         $('#dropdownMenuButton').dropdown();
         
-        $('.tipoComida').slick({
+        {{--  $('.tipoComida').slick({
             dots: false,
             slidesToShow: 5,
             slidesToScroll: 1,
@@ -153,7 +153,7 @@
             touchMove: true,
             prevArrow: '<button type="button" id= "setinha" data-role="none" class="slick-prev"><span class="fas fa-arrow-left"></span></button>',
             nextArrow: '<button type="button" id= "setinha" data-role="none" class="slick-next"><span class="fas fa-arrow-right"></span></button>',
-        });
+        });  --}}
 
         @hasSection ('javascript')
             @yield('javascript')

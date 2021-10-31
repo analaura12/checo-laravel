@@ -36,7 +36,7 @@
             </li>
             <li class="nav-item nav-profile">
                 <a class="nav-link" href="#">
-                    <img src="{{asset('images/dashboard/user.jpeg')}}" alt="profile" />
+                    <img src="data:image;base64, {{auth()->guard('establishment')->user()->profile_image}}" alt="profile" />
                 </a>
             </li>
             <li class="nav-item">

@@ -9,8 +9,9 @@
 #calendar {
     background-color: white;
     color: rgba(129, 126, 126, 0.877);
-    padding: 16px;
-    font-size: 16px;
+    padding: 9px;
+    text-align: center;
+    font-size: 12px;
     border: 1px rgba(214, 209, 209, 0.877) solid;
 }
 
@@ -26,14 +27,65 @@
     font-size: 14px;
 }
 
-#setinha {
-    color: #f05642;
-    font-size: 16px;
+
+/* CARD */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Float four columns side by side */
+
+#column {
+    float: left;
+    padding: 0 10px;
+}
+
+
+/* Remove extra left and right margins, due to padding */
+
+#row {
+    margin: 0 -5px;
+}
+
+
+/* Clear floats after the columns */
+
+#row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Responsive columns */
+
+@media screen and (max-width: 600px) {
+    #column {
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Style the counter cards */
+
+#card {
+    padding: 1px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.089);
+    transition: 0.3s;
+    max-width: 500px;
+}
+
+#card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .dropbtn {
     background-color: white;
-    color: f05642;
+    color: #f05642;
     padding: 16px;
     font-size: 16px;
     border: 1px rgba(214, 209, 209, 0.877) solid;
@@ -50,8 +102,7 @@
     position: absolute;
     background-color: white;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.877);
-    z-index: 1;
+    text-align: center;
 }
 
 .dropdown-content a {

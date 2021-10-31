@@ -43,5 +43,7 @@
 
 <div class="form-group">
     <label for="exampleFormControlInput1" class="form-label">Imagem do item</label><br>
-    <input class="form-control" type="file" style="color: rgb(108, 117, 125);">
+    <input class="form-control" type="file" name="image" style="color: rgb(108, 117, 125);">
 </div>
+
+<input type="hidden" name="user_id" value="{{auth()->guard('establishment')->user()->id}}">

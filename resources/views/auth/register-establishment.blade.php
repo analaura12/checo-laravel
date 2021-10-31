@@ -3,7 +3,7 @@
 @section('content')
 <div class="container" id="container">
     <div class="form-container sign-in-container">
-        <form method="POST" action="{{ route('establishment.register') }}">
+        <form method="POST" action="{{ route('establishment.register') }}" enctype="multipart/form-data">
             @include('layouts.alerts.success')
             @include('layouts.alerts.error')
             
@@ -32,6 +32,13 @@
 
             <input id="cellphone" type="text" class="form-control mask_cellphone_with_ddd @error('cellphone') is-invalid @enderror" name="cellphone" value="{{ old('cellphone') }}" required autocomplete="cellphone" placeholder="Celular">
             @error('cellphone')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+
+            <input id="profile_image" type="file" class="form-control @error('profile_image') is-invalid @enderror" name="profile_image" value="{{ old('profile_image') }}" required autocomplete="profile_image" placeholder="">
+            @error('profile_image')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
