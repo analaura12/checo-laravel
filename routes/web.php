@@ -58,8 +58,8 @@ Route::group(['middleware' => 'establishment'], function () {
                 Route::post('/update/{id}', ['as' => 'product.update', 'uses' => 'App\Http\Controllers\ProductController@update']);
             });
             #Visualização de pedidos
-             Route::prefix('/order')->group(function ($router) {
-                Route::get('/', ['as' => 'order', 'uses' => 'App\Http\Controllers\OrderController@index']);
+             Route::prefix('/reserve')->group(function ($router) {
+                Route::get('/', ['as' => 'reserve', 'uses' => 'App\Http\Controllers\OrderController@index']);
             });
         });
     });

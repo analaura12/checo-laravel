@@ -13,7 +13,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        return view('establishment.order.index');
+        return view('establishment.reserve.index');
     }
 
     /**

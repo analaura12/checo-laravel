@@ -54,7 +54,6 @@
                                 </div>
                             </div>
                         </div>
-                        <button onclick="filter()" class="btn-solid-sm"><i class="fa fa-search"></i></button> 
                     </div>
                 </div>
             </div>
@@ -189,7 +188,7 @@
                 <br>
             </div>
         </div>
-        <div class="row">
+        {{--  <div class="row">
             <div class="col-lg-4 col-12">
                 <div class="card">
                     <div class="card-icon">
@@ -236,7 +235,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  --}}
     </div>
 </div>
 </div>

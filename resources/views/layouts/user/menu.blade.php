@@ -1,35 +1,24 @@
-<nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
-      <div class="container">
-          <!-- Logo -->
-          <a class="navbar-brand logo-image">
-            <img src="{{asset('images/logo-checo.png')}}" alt="alternative">
-          </a>
-          <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-              <ul class="navbar-nav ms-auto navbar-nav-scroll">
-                  <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="{{route('home')}}">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page">Produtos</a>
-                </li>
-              </ul>
-              <span class="nav-item">
-                  <a class="btn-solid-sm" href="#carrinho">
-                      <i class="fas fa-shopping-cart"></i>
-                  </a>
-              </span>
-              <span class="nav-item">
-                <a class="dropdown-item" href="{{ route('logout') }}"
-                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                 Sair
+<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="../establishment/home-establishment.php"> <img src="{{asset('images/logo-checo.png')}}"
+                alt="alternative"></a>
+        <a class="navbar-brand brand-logo-mini" href="../establishment/home-establishment.php"> <img src="{{asset('images/logo-checo.png')}}"
+                alt="alternative"></a>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="icon-menu"></span>
+        </button>
+        <ul class="navbar-nav navbar-nav-right">
+            <li class="nav-item">
+                {{auth()->guard('web')->user()->name}}
+            </li>
+            <li class="nav-item">
+                <i class="ti-power-off text-primary"></i> 
+                <a href="{{route('establishment.logout')}}">
+                    Sair
                 </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                    @csrf
-                </form>
-            </span>
-          </div>
-      </div>
-  </nav>
+            </li>
+        </ul>
+    </div>
+</nav>

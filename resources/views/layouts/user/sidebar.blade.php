@@ -3,7 +3,7 @@
     <li class="nav-item">
             <a class="nav-link"  href="{{route('home')}}">
                 <i class="fas fa-home menu-icon"></i>
-                <span class="menu-title">Principal</span>
+                <span class="menu-title">Home</span>
             </a>
         </li>
         <li class="nav-item">
