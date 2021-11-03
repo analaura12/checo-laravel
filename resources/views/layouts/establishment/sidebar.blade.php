@@ -14,7 +14,7 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('table')}}">
-                <i class="ti-ticket menu-icon"></i>
+                <i class="ti-pin menu-icon"></i>
                 <span class="menu-title">Mesas</span>
             </a>
         </li>

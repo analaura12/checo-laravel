@@ -14,10 +14,15 @@
                 {{auth()->guard('web')->user()->name}}
             </li>
             <li class="nav-item">
-                <i class="ti-power-off text-primary"></i> 
-                <a href="{{route('establishment.logout')}}">
-                    Sair
-                </a>
+                <span class="nav-item">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                     Sair
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </span>
             </li>
         </ul>
     </div>
