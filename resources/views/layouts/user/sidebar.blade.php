@@ -7,7 +7,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link"  href="{{route('reserve')}}">
+            <a class="nav-link"  href="{{route('user.reserve')}}">
                 <i class="ti-ticket menu-icon"></i>
                 <span class="menu-title">Reservas</span>
             </a>

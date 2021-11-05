@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrdersTable extends Migration
+class CreateReservesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,10 +18,22 @@ class CreateOrdersTable extends Migration
             $table->date('date');
             $table->date('hour');
             $table->string('observation');
+            //Chave estrangeira para usuário
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+            //Chave estrangeira para estabelecimento
+            $table->unsignedBigInteger('establishment_id')->nullable();
+            $table->foreign('establishment_id')->references('id')->on('establishments');
+            //Chave estrangeira para mesa
             $table->unsignedBigInteger('table_id')->nullable();
             $table->foreign('table_id')->references('id')->on('tables');
+            //Chave estrangeira para produto
             $table->unsignedBigInteger('product_id')->nullable();
             $table->foreign('product_id')->references('id')->on('products');
+            //Chave estrangeira para status
+            $table->unsignedBigInteger('status_id')->nullable();
+            $table->foreign('status_id')->references('id')->on('status_reserves');
+
             $table->timestamps();
         });
     }

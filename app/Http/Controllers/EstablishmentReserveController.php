@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reserve;
+
 use Illuminate\Http\Request;
 
-class HomerEstablishmentController extends Controller
+class EstablishmentReserveController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +15,9 @@ class HomerEstablishmentController extends Controller
      */
     public function index()
     {
-        //
+        //$reserves = Reserve::with(['Product', 'User', 'Table', 'Establishment', 'Status'])->where('id', '>=', 1)->get();
+       
+        return view('establishment.reserve.index');
     }
 
     /**

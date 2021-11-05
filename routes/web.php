@@ -16,14 +16,13 @@ Route::group(['middleware' => 'web'], function () {
     Auth::routes();
     #Home User
     Route::prefix('/home')->group(function ($router) {
-        Route::get('/', ['as' => 'home', 'uses' => 'App\Http\Controllers\HomeUserController@index']);
-    });
-    Route::prefix('/management-products')->group(function ($router) {
-        Route::get('/', ['as' => 'management.products', 'uses' => 'App\Http\Controllers\ProductUserController@index']);
+        Route::get('/', ['as' => 'home', 'uses' => 'App\Http\Controllers\UserHomeController@index']);
     });
     #Visualização de reservas
     Route::prefix('/reserve')->group(function($router){
-        Route::get('/', ['as' => 'reserve', 'uses' => 'App\Http\Controllers\ReserveController@index']);
+        Route::get('/', ['as' => 'user.reserve', 'uses' => 'App\Http\Controllers\UserReserveController@index']);
+        #Abaixo dessa linha, deve ter a rota de update de cancelar reserva
+        //
     });
             
 });
@@ -41,25 +40,27 @@ Route::group(['middleware' => 'establishment'], function () {
             Route::get('/', ['as' => 'establishment', 'uses' => 'App\Http\Controllers\EstablishmentController@index']);
             #Cadastro de Mesas
             Route::prefix('/table')->group(function ($router) {
-                Route::get('/', ['as' => 'table', 'uses' => 'App\Http\Controllers\TableController@index']);
-                Route::get('/create', ['as' => 'table.create', 'uses' => 'App\Http\Controllers\TableController@create']);
-                Route::get('/edit/{id}', ['as' => 'table.edit', 'uses' => 'App\Http\Controllers\TableController@edit']);
-                Route::get('/destroy/{id}', ['as' => 'table.destroy', 'uses' => 'App\Http\Controllers\TableController@destroy']);
-                Route::post('/store', ['as' => 'table.store', 'uses' => 'App\Http\Controllers\TableController@store']);
-                Route::post('/update/{id}', ['as' => 'table.update', 'uses' => 'App\Http\Controllers\TableController@update']);
+                Route::get('/', ['as' => 'table', 'uses' => 'App\Http\Controllers\EstablishmentTableController@index']);
+                Route::get('/create', ['as' => 'table.create', 'uses' => 'App\Http\Controllers\EstablishmentTableController@create']);
+                Route::get('/edit/{id}', ['as' => 'table.edit', 'uses' => 'App\Http\Controllers\EstablishmentTableController@edit']);
+                Route::get('/destroy/{id}', ['as' => 'table.destroy', 'uses' => 'App\Http\Controllers\EstablishmentTableController@destroy']);
+                Route::post('/store', ['as' => 'table.store', 'uses' => 'App\Http\Controllers\EstablishmentTableController@store']);
+                Route::post('/update/{id}', ['as' => 'table.update', 'uses' => 'App\Http\Controllers\EstablishmentTableController@update']);
             });
             #Cadastro de Produtos
             Route::prefix('/product')->group(function ($router) {
-                Route::get('/', ['as' => 'product', 'uses' => 'App\Http\Controllers\ProductController@index']);
-                Route::get('/create', ['as' => 'product.create', 'uses' => 'App\Http\Controllers\ProductController@create']);
-                Route::get('/edit/{id}', ['as' => 'product.edit', 'uses' => 'App\Http\Controllers\ProductController@edit']);
-                Route::get('/destroy/{id}', ['as' => 'product.destroy', 'uses' => 'App\Http\Controllers\ProductController@destroy']);
-                Route::post('/store', ['as' => 'product.store', 'uses' => 'App\Http\Controllers\ProductController@store']);
-                Route::post('/update/{id}', ['as' => 'product.update', 'uses' => 'App\Http\Controllers\ProductController@update']);
+                Route::get('/', ['as' => 'product', 'uses' => 'App\Http\Controllers\EstablishmentProductController@index']);
+                Route::get('/create', ['as' => 'product.create', 'uses' => 'App\Http\Controllers\EstablishmentProductController@create']);
+                Route::get('/edit/{id}', ['as' => 'product.edit', 'uses' => 'App\Http\Controllers\EstablishmentProductController@edit']);
+                Route::get('/destroy/{id}', ['as' => 'product.destroy', 'uses' => 'App\Http\Controllers\EstablishmentProductController@destroy']);
+                Route::post('/store', ['as' => 'product.store', 'uses' => 'App\Http\Controllers\EstablishmentProductController@store']);
+                Route::post('/update/{id}', ['as' => 'product.update', 'uses' => 'App\Http\Controllers\EstablishmentProductController@update']);
             });
-            #Visualização de pedidos
+            #Visualização de Reservas
              Route::prefix('/reserve')->group(function ($router) {
-                Route::get('/', ['as' => 'reserve', 'uses' => 'App\Http\Controllers\OrderController@index']);
+                Route::get('/', ['as' => 'reserve', 'uses' => 'App\Http\Controllers\EstablishmentReserveController@index']);
+                  #Abaixo dessa linha, deve ter a rota de update de cancelar reserva
+                  //
             });
         });
     });

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 use Auth;
 
-class ReserveController extends Controller
+class UserReserveController extends Controller
 {
 
     /**
