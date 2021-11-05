@@ -15,7 +15,7 @@ class EstablishmentProductController extends Controller
      */
     public function index()
     {
-        $products = Product::where('user_id', '=', auth()->guard('establishment')->user()->id)->get();
+        $products = Product::where('establishment_id', '=', auth()->guard('establishment')->user()->id)->get();
         return view('establishment.product.index')->with(compact('products'));
     }
 
@@ -48,7 +48,7 @@ class EstablishmentProductController extends Controller
 
         Product::create($product);
         
-        return redirect()->back()->with('success', 'Mesa cadastrada com sucesso!');
+        return redirect()->back()->with('success', 'Produto cadastrado com sucesso!');
     }
 
     /**

@@ -15,7 +15,7 @@ class EstablishmentTableController extends Controller
      */
     public function index()
     {
-        $tables = Table::where('user_id', '=', auth()->guard('establishment')->user()->id)->get();
+        $tables = Table::where('establishment_id', '=', auth()->guard('establishment')->user()->id)->get();
         return view('establishment.table.index')->with(compact('tables'));
     }
 
