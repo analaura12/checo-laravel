@@ -12,6 +12,11 @@ class Product extends Model
     protected $table = 'products';
 
     protected $fillable = [
-        'name', 'code', 'description', 'category', 'food_restriction', 'number_people_served', 'price', 'image', 'user_id'
+        'name', 'code', 'description', 'category', 'food_restriction', 'number_people_served', 'price', 'image', 'establishment_id'
     ];
+
+    public function Reserve()
+    {
+        return $this->belongsTo(Reserve::class);
+    }
 }

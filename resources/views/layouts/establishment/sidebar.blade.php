@@ -14,14 +14,14 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('table')}}">
-                <i class="ti-ticket menu-icon"></i>
+                <i class="ti-pin menu-icon"></i>
                 <span class="menu-title">Mesas</span>
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link"  href="{{route('order')}}">
+            <a class="nav-link"  href="{{route('reserve')}}">
                 <i class="ti-ticket menu-icon"></i>
-                <span class="menu-title">Pedidos</span>
+                <span class="menu-title">Reservas</span>
             </a>
         </li>
     </ul>

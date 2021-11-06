@@ -1,33 +1,59 @@
 @extends('layouts.app')
 
 @section('content')
-@include('layouts.user.menu')
-<header id="header" class="header"> 
-    <div class="container text-center">
-        <div class="row">
-            <div class="text-container">  
-                <h2 class="card-title">Chegou e Comeu, vem com o CHE CO</h2><br>
-                <p class="card-text">Com o CHE CO não é necessário esperar em filas, basta apenas reservar a refeição e
-                    a mesa, chegar e comer.</p><br>
-                <div class="container text-center">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control py-4 px-md-2" placeholder="Pesquise o estabelecimento ou item">
-                        <button class="dropbtn" id="calendar" disabled>Check-in: </button>
-                        <input type="date" id="calendar" class="btn-sm" name="trip-start" min="2021-09-16" max="2022-09-15">
-                        
-                        <div class="dropdown" id="calendar">
-                            <div class="col py-1 px-md-2"><span class="fas fa-user"></span>&ensp; 1 pessoa</div>
-                            <div class="dropdown-content">
-                                <div class="card" class="dropdown-item py-1 px-md-2" id="calendar" style="box-shadow: 0px 4px 4px 0px rgba(43, 42, 42, 0.473);">
-                                    <div class="input-group mb-2">
-                                        <h6><br> Número de pessoas:<br>
-                                            <br><button id="botao"><span class="fas fa-plus"></span></button> 1 <button id="botao"><span class="fas fa-minus"></span>
-                                        </h6>
+<div class="container-scroller">
+    @include('layouts.user.menu')
+    <div class="container-fluid page-body-wrapper">
+        @include('layouts.user.sidebar')
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <header id="header" class="header">
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="text-container">
+                                    <h2 class="card-title">Chegou e Comeu, vem com o CHE CO</h2><br>
+                                    <p class="card-text">Com o CHE CO não é necessário esperar em filas, basta apenas
+                                        reservar a refeição e
+                                        a mesa, chegar e comer.</p><br>
+                                    <div class="container text-center">
+                                        <div class="input-group mb-2">
+                                            <input type="text" class="form-control"
+                                                placeholder="Pesquise o estabelecimento ou item">
+                                            <button class="dropbtn" id="calendar">Check-in: </button>
+                                            <input type="date" id="calendar" class="btn-sm" name="trip-start"
+                                                min="2021-09-16" max="2022-09-15">
+                                            <div class="dropdown">
+                                                <button class="dropbtn" id="calendar"><span class="fas fa-user"></span>
+                                                    1
+                                                    adulto</button>
+                                                <div class="dropdown-content">
+                                                    <div class="card" class="dropdown-item">
+                                                        <div class="input-group mb-2">
+                                                            <h6><br>Adultos: &nbsp
+                                                                <button id="botao"><span
+                                                                        class="fas fa-plus"></span></button> 1 <button
+                                                                    id="botao"><span class="fas fa-minus"></span>
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card" class="dropdown-item">
+                                                        <div class="input-group mb-2">
+                                                            <h6>Crianças:
+                                                                <button id="botao"><span
+                                                                        class="fas fa-plus"></span></button> 0 <button
+                                                                    id="botao"><span class="fas fa-minus"></span>
+                                                            </h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a class="btn-solid-sm" href="#"><i class="fa fa-search"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <button onclick="filter()" class="btn-solid-sm"><i class="fa fa-search"></i></button> 
                     </div>
                 </div>
             </div>
@@ -162,7 +188,7 @@
                 <br>
             </div>
         </div>
-        <div class="row">
+        {{--  <div class="row">
             <div class="col-lg-4 col-12">
                 <div class="card">
                     <div class="card-icon">
@@ -187,12 +213,20 @@
                         <a class="read-more no-line" href="">Saiba mais <span class="fas fa-long-arrow-alt-right"></span></a>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-12">
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-icon green">
-                        <span class="far fa-comments"></span>
+                <div class="row">
+                    <div class="col-lg-4 col-12">
+                        <div class="card">
+                            <div class="card-icon">
+                                <span class="fas fa-headphones-alt"></span>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Visibilidade do seu comércio</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua </p>
+                                <a class="read-more no-line" href="">Saiba mais <span
+                                        class="fas fa-long-arrow-alt-right"></span></a>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Reserve seus pedidos com antecedência!</h5>
@@ -201,8 +235,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>  --}}
     </div>
+</div>
+</div>
+</div>
 </div>
 @endsection
 @section('javascript')

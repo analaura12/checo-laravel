@@ -22,6 +22,9 @@ class CreateStatusReservesTable extends Migration
         DB::table('status_reserves')->insert(['id' => 1,  'description' => 'Pendente']);
         DB::table('status_reserves')->insert(['id' => 2,  'description' => 'Aprovado']);
         DB::table('status_reserves')->insert(['id' => 3,  'description' => 'Desaprovado']);
+        DB::table('status_reserves')->insert(['id' => 4,  'description' => 'Finalizada']);
+        DB::table('status_reserves')->insert(['id' => 5,  'description' => 'Cancelada']);
+        DB::table('status_reserves')->insert(['id' => 6,  'description' => 'Em andamento']);
     }
 
     /**

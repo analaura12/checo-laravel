@@ -12,7 +12,11 @@ class Table extends Model
     protected $table = 'tables';
 
     protected $fillable = [
-        'number', 'number_of_chairs', 'description', 'user_id'
+        'number', 'number_of_chairs', 'description', 'establishment_id'
     ];
 
+    public function Reserve()
+    {
+        return $this->belongsTo(Reserve::class);
+    }
 }

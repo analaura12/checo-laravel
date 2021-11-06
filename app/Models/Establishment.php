@@ -39,4 +39,8 @@ class Establishment  extends Authenticatable
         'remember_token',
     ];
 
+    public function Reserve()
+    {
+        return $this->hasMany(Reserve::class);
+    }
 }

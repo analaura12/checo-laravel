@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Table;
-
 use Illuminate\Http\Request;
 
-class TableController extends Controller
+class UserProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +13,7 @@ class TableController extends Controller
      */
     public function index()
     {
-        $tables = Table::where('user_id', '=', auth()->guard('establishment')->user()->id)->get();
-        return view('establishment.table.index')->with(compact('tables'));
+        return view('user.product.index');
     }
 
     /**
@@ -26,7 +23,7 @@ class TableController extends Controller
      */
     public function create()
     {
-        return view('establishment.table.create');
+        //
     }
 
     /**
@@ -37,9 +34,7 @@ class TableController extends Controller
      */
     public function store(Request $request)
     {
-        Table::create($request->all());
-
-        return redirect()->back()->with('success', 'Mesa cadastrada com sucesso!');
+        //
     }
 
     /**
@@ -61,8 +56,7 @@ class TableController extends Controller
      */
     public function edit($id)
     {
-        $table = Table::find($id);
-        return view('establishment.table.edit')->with(compact('table'));
+        //
     }
 
     /**
@@ -74,13 +68,7 @@ class TableController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $table = Table::find($id)->update($request->all());
-
-        if($table != true){
-            return redirect()->back()->with('error', 'Erro ao atualizar dados da mesa!');
-        }
-
-        return redirect()->route('table')->with('success', 'Mesa atualizada com sucesso!');
+        //
     }
 
     /**
@@ -91,12 +79,6 @@ class TableController extends Controller
      */
     public function destroy($id)
     {
-        $table = Table::destroy($id);
-        
-        if($table != true){
-            return redirect()->back()->with('error', 'Houve um erro ao deletar o registro!');
-        }
-
-        return redirect()->back()->with('success', 'Mesa deletada com sucesso!');
+        //
     }
 }

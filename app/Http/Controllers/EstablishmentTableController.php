@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\Table;
 
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class EstablishmentTableController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::where('user_id', '=', auth()->guard('establishment')->user()->id)->get();
-        return view('establishment.product.index')->with(compact('products'));
+        $tables = Table::where('establishment_id', '=', auth()->guard('establishment')->user()->id)->get();
+        return view('establishment.table.index')->with(compact('tables'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('establishment.product.create');
+        return view('establishment.table.create');
     }
 
     /**
@@ -37,17 +37,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = $request->all();
+        Table::create($request->all());
 
-        $convertBase64 = function ($file) {
-            $imagedata = file_get_contents($file);
-            return base64_encode($imagedata);
-        };
-
-        $product['image'] = $convertBase64($product['image']);
-
-        Product::create($product);
-        
         return redirect()->back()->with('success', 'Mesa cadastrada com sucesso!');
     }
 
@@ -70,8 +61,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::find($id);
-        return view('establishment.product.edit')->with(compact('product'));
+        $table = Table::find($id);
+        return view('establishment.table.edit')->with(compact('table'));
     }
 
     /**
@@ -83,22 +74,13 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $req = $request->all();
+        $table = Table::find($id)->update($request->all());
 
-        $convertBase64 = function ($file) {
-            $imagedata = file_get_contents($file);
-            return base64_encode($imagedata);
-        };
-
-        $req['image'] = $convertBase64($req['image']);
-
-        $product = Product::find($id)->update($req);
-
-        if($product != true){
-            return redirect()->back()->with('error', 'Erro ao atualizar dados do produto!');
+        if($table != true){
+            return redirect()->back()->with('error', 'Erro ao atualizar dados da mesa!');
         }
 
-        return redirect()->route('product')->with('success', 'Produto atualizado com sucesso!');
+        return redirect()->route('table')->with('success', 'Mesa atualizada com sucesso!');
     }
 
     /**
@@ -109,11 +91,12 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        $product = Product::destroy($id);
-        if($product != true){
+        $table = Table::destroy($id);
+        
+        if($table != true){
             return redirect()->back()->with('error', 'Houve um erro ao deletar o registro!');
         }
 
-        return redirect()->back()->with('success', 'Produto deletado com sucesso!');
+        return redirect()->back()->with('success', 'Mesa deletada com sucesso!');
     }
 }
