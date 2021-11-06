@@ -18,12 +18,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::prefix('/home')->group(function ($router) {
         Route::get('/', ['as' => 'home', 'uses' => 'App\Http\Controllers\UserHomeController@index']);
     });
-    #Visualização de reservas
+    #Visualização de reservas 
     Route::prefix('/reserve')->group(function($router){
         Route::get('/', ['as' => 'user.reserve', 'uses' => 'App\Http\Controllers\UserReserveController@index']);
         #Abaixo dessa linha, deve ter a rota de update de cancelar reserva
-        //
-    });
+        Route::get('/update/{id}', ['as' => 'reserve.update', 'uses' => 'App\Http\Controllers\UserReserveController@update']);
+    }); 
             
 });
 
