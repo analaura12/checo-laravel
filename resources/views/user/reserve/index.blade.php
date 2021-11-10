@@ -93,7 +93,7 @@
                                                                     @endswitch
                                                                 </td>
                                                                 <td>
-                                                                    @if($res->status_id == 1 || $res->status_id == 2 || $res->status_id == 6)
+                                                                    @if($res->status_id == 1 || $res->status_id == 2)
                                                                         <a  class="btn btn-danger delete-confirm" title="Cancelar"
                                                                             data-original-title="Cancelar" href="{{route('reserve.update', $res->id)}}">
                                                                             <i class="fas fa-times"></i>
