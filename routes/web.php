@@ -59,8 +59,8 @@ Route::group(['middleware' => 'establishment'], function () {
             #Visualização de Reservas
              Route::prefix('/reserve')->group(function ($router) {
                 Route::get('/', ['as' => 'reserve', 'uses' => 'App\Http\Controllers\EstablishmentReserveController@index']);
-                  #Abaixo dessa linha, deve ter a rota de update de cancelar reserva
-                  //
+                  #Abaixo dessa linha, deve ter a rota de update de status reserva
+                Route::get('/update/{id}', ['as' => 'status.update', 'uses' => 'App\Http\Controllers\EstablishmentReserveController@update']);
             });
         });
     });
