@@ -22,8 +22,8 @@ class EstablishmentReserveController extends Controller
     {
         $reserves = Reserve::where('establishment_id', '=', auth()->guard('establishment')->user()->id)->get();
         $user = User::all();
-        $products = Product::all(); 
-        $tables = Table::all(); 
+        $products = Product::all();
+        $tables = Table::all();
         return view('establishment.reserve.index')-> with(compact('reserves', 'products','tables', 'user'));
     }
 
@@ -82,12 +82,12 @@ class EstablishmentReserveController extends Controller
         $req = $request->all();
         $status = StatusReserve::where('id', '=', $id)->get();
         $req['status_id'] = $status;
-        
+
         if($status != true){
             return redirect()->back()->with('error', 'Erro na mudança de status!');
         }
 
-        return redirect()->back()->with('reserve')->with('success', 'Status alterado com sucesso!'); 
+        return redirect()->back()->with('reserve')->with('success', 'Status alterado com sucesso!');
     }
 
     /**
