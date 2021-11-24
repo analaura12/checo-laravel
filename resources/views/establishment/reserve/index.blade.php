@@ -33,7 +33,7 @@
                                                             <th scope="col">Produto</th>
                                                             <th scope="col">Valor</th>
                                                             <th scope="col">Status</th>
-                                                            <th scope="col"></th>
+                                                            <th scope="col">Ações</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -70,6 +70,27 @@
                                                                                 {{ $prod->price }}
                                                                             @endif
                                                                         @endforeach
+                                                                    </td>
+                                                                    <td>
+                                                                        @switch($res->status_id)
+                                                                            @case(1)
+                                                                                <span class="grey"><i class="fas fa-clock" title="Pendente"></i></span>
+                                                                                @break
+                                                                            @case(2)
+                                                                                <span class="green"><i class="fas fa-check-circle" title="Aprovado"></i></span>
+                                                                                @break
+                                                                            @case(3)
+                                                                                <span class="red"><i class="far fa-times-circle" title="Desaprovado"></i></span>
+                                                                                @break
+                                                                            @case(4)
+                                                                                <span class="grey"><i class="fas fa-calendar-check" title="Finalizada"></i></span>
+                                                                                @break
+                                                                            @case(5)
+                                                                                <span class="red"><i class="fas fa-calendar-times" title="Cancelada"></i></span>
+                                                                                @break
+                                                                            @default
+                                                                            <span class="green"><i class="fas fa-calendar-day" title="Em andamento"></i></span>
+                                                                        @endswitch
                                                                     </td>
                                                                     <td>
                                                                         <a class="btn btn-primary" title="Ver detalhes"
