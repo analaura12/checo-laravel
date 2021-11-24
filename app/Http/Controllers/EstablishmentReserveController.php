@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reserve;
+use App\Models\Establishment;
+use App\Models\Product;
+use App\Models\StatusReserve;
+use App\Models\User;
+use App\Models\Table;
 
 use Illuminate\Http\Request;
 
@@ -15,9 +20,11 @@ class EstablishmentReserveController extends Controller
      */
     public function index()
     {
-        //$reserves = Reserve::with(['Product', 'User', 'Table', 'Establishment', 'Status'])->where('id', '>=', 1)->get();
-       
-        return view('establishment.reserve.index');
+        $reserves = Reserve::where('establishment_id', '=', auth()->guard('establishment')->user()->id)->get();
+        $user = User::all();
+        $products = Product::all();
+        $tables = Table::all();
+        return view('establishment.reserve.index')-> with(compact('reserves', 'products','tables', 'user'));
     }
 
     /**
@@ -72,7 +79,15 @@ class EstablishmentReserveController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $req = $request->all();
+        $status = StatusReserve::where('id', '=', $id)->get();
+        $req['status_id'] = $status;
+
+        if($status != true){
+            return redirect()->back()->with('error', 'Erro na mudança de status!');
+        }
+
+        return redirect()->back()->with('reserve')->with('success', 'Status alterado com sucesso!');
     }
 
     /**
