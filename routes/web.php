@@ -21,10 +21,11 @@ Route::group(['middleware' => 'web'], function () {
     #Visualização de reservas 
     Route::prefix('/reserve')->group(function($router){
         Route::get('/', ['as' => 'user.reserve', 'uses' => 'App\Http\Controllers\UserReserveController@index']);
-        #Abaixo dessa linha, deve ter a rota de update de cancelar reserva
         Route::get('/update/{id}', ['as' => 'reserve.update', 'uses' => 'App\Http\Controllers\UserReserveController@update']);
     }); 
-            
+    Route::prefix('/management-reserve')->group(function($router){
+        Route::get('/{id}', ['as' => 'user.management.reserve', 'uses' => 'App\Http\Controllers\UserManagementReserveController@index']);
+    });     
 });
 
 #Rotas de Estabelecimentos

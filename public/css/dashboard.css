@@ -18625,7 +18625,7 @@ dl li {
 }
 
 .tab-content {
-    border: 1px solid #CED4DA;
+    /* border: 1px solid #CED4DA; */
     border-top: 0;
     padding: 2rem 1rem;
     text-align: justify;

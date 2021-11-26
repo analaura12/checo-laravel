@@ -87,7 +87,7 @@
                                     <div class="card-body">
                                     <h5 class="card-title">{{$est->name}}</h5>
                                     <p class="card-text">Telefone: {{$est->cellphone}} <br>E-mail: {{$est->email}}</p>
-                                    <p class="card-text"><small class="text-muted"><a class="btn-solid-sm" href="#">Ver produtos</a></small></p>
+                                    <p class="card-text"><small class="text-muted"><a class="btn-solid-sm" href="{{route('user.management.reserve', $est->id)}}">Ver produtos</a></small></p>
                                     </div>
                                 </div>
                                 </div>
