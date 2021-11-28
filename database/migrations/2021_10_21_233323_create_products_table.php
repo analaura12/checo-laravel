@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('code');
-            $table->string('description');
+            $table->longText('description');
             $table->string('category');
             $table->string('food_restriction');
             $table->string('number_people_served');

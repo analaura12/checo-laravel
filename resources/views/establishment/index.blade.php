@@ -101,7 +101,7 @@
                     </div>
                 </div>
                 <!-- Partners -->
-                <div id="partners" class="cards-1 bg-gray">
+                {{--  <div id="partners" class="cards-1 bg-gray">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -123,10 +123,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  --}}
     
                 <!-- Depoimentos-->
-                <div class="cards-1 bg-gray">
+                {{--  <div class="cards-1 bg-gray">
                     <div class="container-fluid">
                         <div class="container">
                             <div class="row">
@@ -183,10 +183,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  --}}
     
                 <!-- New Partners -->
-                <div id="benefits" class="cards-1 bg-gray">
+                {{--  <div id="benefits" class="cards-1 bg-gray">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -240,7 +240,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>  --}}
                 <!-- FIM DO CONTEÚDO -->
             </div>
         </div>

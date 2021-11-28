@@ -1,4 +1,5 @@
 @csrf
+<input type="hidden" name="establishment_id" value="{{auth()->guard('establishment')->user()->id}}">
 <div class="form-group">
     <label for="exampleFormControlInput1"  class="form-label">Categoria</label>
     <input type="text" class="form-control" name="category" id="exampleFormControlInput1" placeholder="Digite a categoria" required value="{{isset($product->category) ? $product->category : ''}}">

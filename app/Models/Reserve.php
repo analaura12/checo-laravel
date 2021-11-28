@@ -22,23 +22,22 @@ class Reserve extends Model
 
     public function Product()
     {
-
+        return $this->hasOne(Product::class, 'id', 'product_id');
     }
 
     public function Table()
     {
-
+        return $this->hasOne(Table::class, 'id', 'table_id');
     }
 
     public function Status()
     {
-
+        return $this->hasOne(StatusReserve::class, 'id', 'status_id');
     }
-
 
     public function Establishment()
     {
-
+        return $this->hasOne(User::class, 'id', 'establishment_id');
     }
 
 }

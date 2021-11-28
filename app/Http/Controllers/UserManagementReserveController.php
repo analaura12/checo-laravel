@@ -32,7 +32,7 @@ class UserManagementReserveController extends Controller
             'user_id' => auth()->guard('web')->user()->id,
             'table_id' => $request->input('table_id'),
             'product_id' => $request->input('product_id'),
-            'status_id' => $request->input('status_id'),
+            'status_id' => 1,
         ]);
 
        return redirect()->route('user.reserve')->with('success', 'Reserva efetuada com sucesso!');

@@ -48,7 +48,7 @@
                                                                             @endif
                                                                         @endforeach
                                                                     </td>
-                                                                    <td>{{ $res->date }}</td>
+                                                                    <td>{{date('d/m/Y', strtotime($res->date))}}</td>
                                                                     <td>{{ $res->hour }}</td>
                                                                     <td>
                                                                         @foreach ($tables as $tab)
@@ -93,29 +93,37 @@
                                                                         @endswitch
                                                                     </td>
                                                                     <td>
-                                                                        <a class="btn btn-primary" title="Ver detalhes"
-                                                                            data-original-title="Ver detalhes" href="">
+                                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal-{{$res->id}}"  title="Ver detalhes"
+                                                                        data-original-title="Ver detalhes">
                                                                             <i class="fas fa-list"></i>
-                                                                        </a>
+                                                                        </button>
+                                                                        @if($res->status_id == 1)
                                                                         <a class="btn btn-success" title="Aprovar"
-                                                                            data-original-title="Aprovar" href="{{route('status.update', $res->status_id = 2)}}">
+                                                                            data-original-title="Aprovar" href="{{route('status.update',['id' => $res->id, 'status_id' => 2] )}}">
                                                                             <i class="fas fa-check"></i>
                                                                         </a>
+                                                                        @endif
+                                                                        @if($res->status_id == 1)
                                                                         <a class="btn btn-danger" title="Desaprovar"
-                                                                            data-original-title="Desaprovar" href="{{route('status.update',$res->status_id = 3)}}">
+                                                                            data-original-title="Desaprovar" href="{{route('status.update', ['id' => $res->id, 'status_id' => 3] )}}">
                                                                             <i class="far fa-times-circle"></i>
                                                                         </a>
+                                                                        @endif
+                                                                        @if($res->status_id == 2)
                                                                         <a class="btn btn-warning" title="Em andamento"
-                                                                            data-original-title="Em andamento" href="{{route('status.update',$res->status_id = 6)}}">
+                                                                            data-original-title="Em andamento" href="{{route('status.update', ['id' => $res->id, 'status_id' => 6] )}}">
                                                                             <i class="fas fa-spinner"></i>
                                                                         </a>
+                                                                        @endif
+                                                                        @if($res->status_id == 6)
                                                                         <a class="btn btn-info" title="Finalizada"
-                                                                            data-original-title="Finalizada" href="{{route('status.update', $res->status_id = 4)}}">
+                                                                            data-original-title="Finalizada" href="{{route('status.update',  ['id' => $res->id, 'status_id' => 4] )}}">
                                                                             <i class="fas fa-check-double"></i>
                                                                         </a>
+                                                                        @endif
                                                                     </td>
                                                                 </tr>
-
+                                                                @include('establishment.reserve.modal')
                                                             @endforeach
                                                         @else
                                                             <h5>Não há reservas.</h5>

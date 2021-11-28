@@ -20,7 +20,8 @@ class EstablishmentReserveController extends Controller
      */
     public function index()
     {
-        $reserves = Reserve::where('establishment_id', '=', auth()->guard('establishment')->user()->id)->get();
+        $reserves = Reserve::with(['Product', 'Table', 'Status', 'Establishment', 'User'])->where('establishment_id', '=', auth()->guard('establishment')->user()->id)->get();
+
         $user = User::all();
         $products = Product::all();
         $tables = Table::all();
@@ -77,11 +78,14 @@ class EstablishmentReserveController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id, $status_id)
     {
-        $req = $request->all();
-        $status = StatusReserve::where('id', '=', $id)->get();
-        $req['status_id'] = $status;
+        $status = Reserve::find($id);
+
+        if($status) {
+            $status->status_id = $status_id;
+            $status->save();
+        }
 
         if($status != true){
             return redirect()->back()->with('error', 'Erro na mudança de status!');

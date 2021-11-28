@@ -1,4 +1,5 @@
 @csrf
+<input type="hidden" name="establishment_id" value="{{auth()->guard('establishment')->user()->id}}">
 <div class="form-group">
     <label for="">Número da mesa</label>
     <input type="number" class="form-control" min="0" step="1" name="number" value="{{isset($table->number) ? $table->number : ''}}" required>
