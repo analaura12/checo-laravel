@@ -33,6 +33,11 @@
           <p>Nome: {{$res->Product->name}}</p>
           <p>Preço: {{$res->Product->price}}</p>
           <hr>
+
+          <h4 class=""<strong>Status da reserva</strong></h4>
+          <br>
+          <p>{{$res->Status->description}}</p>
+          <hr>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
