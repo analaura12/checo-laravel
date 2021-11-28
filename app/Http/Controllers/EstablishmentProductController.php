@@ -90,7 +90,11 @@ class EstablishmentProductController extends Controller
             return base64_encode($imagedata);
         };
 
-        $req['image'] = $convertBase64($req['image']);
+        if(isset($req['image']) && $req['image'] != null){
+            $req['image'] = $convertBase64($req['image']);
+        }else{
+            $req['image'] = $req['image_old'];
+        }
 
         $product = Product::find($id)->update($req);
 

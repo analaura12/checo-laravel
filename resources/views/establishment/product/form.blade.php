@@ -41,10 +41,15 @@
     <label for="exampleFormControlInput1" class="form-label">Preço</label>
     <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Digite o preço" name="price" required value="{{isset($product->price) ? $product->price : ''}}">
 </div>
-
+@if(isset($product->image))
+<div class="form-group">
+    <label for="">Imagem atual</label>
+    <img src="data:image;base64,{{$product->image}}" alt="profile" width="120px"/>
+    <input type="hidden"  name="image_old" value="{{$product->image}}">
+    </div>
+@endif
 <div class="form-group">
     <label for="exampleFormControlInput1" class="form-label">Imagem do item</label><br>
     <input class="form-control" type="file" name="image" style="color: rgb(108, 117, 125);">
 </div>
-
 <input type="hidden" name="user_id" value="{{auth()->guard('establishment')->user()->id}}">
