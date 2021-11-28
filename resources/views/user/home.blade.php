@@ -81,7 +81,7 @@
                             <div class="card mb-3" id="card">
                                 <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="data:image;base64, {{ $est->profile_image }}" class="img-fluid rounded-start" alt="...">
+                                    <img src="data:image;base64, {{ $est->profile_image }}" class="img-fluid rounded-start" alt="..." style="height:100%">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
