@@ -12,7 +12,7 @@ class Reserve extends Model
     protected $table = 'reserves';
 
     protected $fillable = [
-        'data', 'hour', 'observation', 'user_id', 'establishment_id', 'table_id', 'product_id', 'status_id'
+        'date', 'hour', 'observation', 'user_id', 'establishment_id', 'table_id', 'product_id', 'status_id'
     ];
 
     public function User()

@@ -16,7 +16,7 @@ class CreateReservesTable extends Migration
         Schema::create('reserves', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->date('hour');
+            $table->string('hour');
             $table->string('observation');
             //Chave estrangeira para usuário
             $table->unsignedBigInteger('user_id')->nullable();

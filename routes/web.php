@@ -25,6 +25,7 @@ Route::group(['middleware' => 'web'], function () {
     }); 
     Route::prefix('/management-reserve')->group(function($router){
         Route::get('/{id}', ['as' => 'user.management.reserve', 'uses' => 'App\Http\Controllers\UserManagementReserveController@index']);
+        Route::post('store/', ['as' => 'user.management.reserve.store', 'uses' => 'App\Http\Controllers\UserManagementReserveController@store']);
     });     
 });
 
