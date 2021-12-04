@@ -1,4 +1,24 @@
 @csrf
+
+<style>
+
+    #id::-webkit-inner-spin-button {-webkit-appearance: none;}
+
+input[type="date"]:before {
+color: transparent;
+background: none;
+display: block;
+font-family: 'FontAwesome';
+content: '\f073';
+width: 15px;
+height: 20px;
+position: absolute;
+top: 7px;
+right: 6px;
+color: #999;
+}
+</style>
+
 <input type="hidden" name="establishment_id" value="{{$establishment_id}}">
 <div class="tab-content" id="main_form">
     <div class="tab-pane active" role="tabpanel" id="step1">
@@ -67,13 +87,13 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Data *</label> 
-                    <input class="form-control" type="date" name="date" placeholder=""> 
+                    <input class="form-control" type="date" id="data" name="date" placeholder="" required> 
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-group">
                     <label>Hora</label> 
-                    <input class="form-control" type="time" name="hour" placeholder=""> 
+                    <input class="form-control" type="time" name="hour" placeholder="" required> 
                 </div>
             </div>
             <div class="col-12">
@@ -90,3 +110,10 @@
     </div>
     <div class="clearfix"></div>
 </div>
+
+<script>
+    
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementsByName("date")[0].setAttribute('min', today);
+
+</script>
