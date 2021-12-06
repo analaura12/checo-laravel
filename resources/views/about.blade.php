@@ -18,15 +18,12 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-10 offset-xl-1">
-                <p>Consulted he eagerness unfeeling deficient existence of. Calling nothing end fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. It esteems luckily mr or picture placing drawing no. Apartments frequently
-                    or motionless on reasonable projecting expression. Last sentence of words thus better.</p>
-                <p class="mb-5">Ye on properly handsome returned throwing am no whatever. In without wishing he of picture no exposed talking minutes. Curiosity continual belonging offending so explained it exquisite. Do remember to followed yourself material mr
-                    recurred carriage. Way mrs end gave fat skin brown yesterday tall walk fact bed.</p>
+                <p>Nós somos uma equipe de estudantes do curso de análise e desenvolvimento de sistemas (ADS) do Instituto Federal de São Paulo (IFSP), do Campus de Jacareí, que se reuniu para a criação desse projeto e desse website.</p>
+                <p class="mb-5">Nosso objetivo é ajudar os estabelecimentos e os clientes com um site de reserva de comida e mesa, o qual é possível facilitar a vida das pessoas e ajudar na proteção delas contra o coronavírus. Com esse website não há mais a necessidade de esperar em filas ou esperar pela comida ficar pronta, você apenas precisa escolher sua comida ou restaurante favorito e reservar sua refeição e mesa de forma online.</p>
 
                 <h2 class="mb-3">Uma história de sucesso!</h2>
-                <p>High drew west we no or at john. About or given on witty event. Or sociable up material bachelor bringing landlord confined. Busy so many in hung easy find well up. So of exquisite my an explained remainder. Dashwood denoting securing
-                    be on perceive my laughing so. Ye on properly handsome returned throwing am no whatever.</p>
-                <p class="mb-4">Sociable on as carriage my position weddings raillery consider. Peculiar trifling absolute and wandered vicinity property yet. The and collecting motionless difficulty son. His hearing staying ten colonel met. Word drew six easy four dear cold deny. Fulfilled direction  continual set him propriety continued. Saw met applauded favourite deficient.</p>
+                <p>O Che Co foi lançado a pouco tempo e já está fazendo sucesso com os estabelecimentos e com os clientes. Com o seu fácil uso e sua grande utilidade, ele vem facilitando a vida das pessoas, que não precisam mais esperar em filas ou pela comida, e dos estabelecimentos, que agora conseguem gerenciar melhor as suas reservas, mesas e clientes. A reserva é feita toda online, poupando tempo e trazendo benefícios para ambos os lados. </p>
+                <p class="mb-4">Alguns dos benefícios comprovados são:</p>
             </div>
         </div>
     </div>
@@ -44,8 +41,8 @@
                             <span class="fa-stack-1x">1</span>
                             </span>
                             <div class="flex-grow-1">
-                                <h5>Item 1</h5>
-                                <p>Features include an eye catching morphtext in the header, details lightbox for more details information</p>
+                                <h5>Poupamos o seu tempo de espera em fila</h5>
+                                <p>Para os usuários, não há mais a necessidade de esperar em filas, basta realizar a sua reserva online e curtir o momento com seus amigos na hora marcada. Para os estabelecimentos, isso trás uma maior visibilidade para o seu comércio e ambos os lados saem felizes.</p>
                             </div>
                         </li>
                     </ul>
@@ -58,8 +55,8 @@
                             <span class="fa-stack-1x">2</span>
                             </span>
                             <div class="flex-grow-1">
-                                <h5>Item 2</h5>
-                                <p>Statistics numbers for important values, card slider for testimonials, image slider for customer logos</p>
+                                <h5>Te ajudamos na proteção contra o Coronavirus</h5>
+                                <p>Nessa pandemia, o que menos queremos é estar em lugares muito aglomerados por conta do vírus. Com este website é possível evitar a aglomeração realizando reservas, e protegendo todas as pessoas.</p>
                             </div>
                         </li>
                     </ul>
@@ -72,8 +69,8 @@
                             <span class="fa-stack-1x">2</span>
                             </span>
                             <div class="flex-grow-1">
-                                <h5>Item 3</h5>
-                                <p>Some useful extra pages are bundled with the template lik article details, terms conditions and privacy policy</p>
+                                <h5>Pensamos nos clientes</h5>
+                                <p>No CHE CO é possível analisar os estabelecimentos e as refeições deles, com isso é possível verificar se o orçamento cabe no bolso do usuário ou se há alguma coisa na comida que o mesmo não pode comer. </p>
                             </div>
                         </li>
                     </ul>
