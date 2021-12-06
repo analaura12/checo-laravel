@@ -40,7 +40,7 @@
                                                                     <div class="col-md-6">
                                                                         <h5>Descrição</h5>
                                                                         <p style="text-align:justify;">
-                                                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In arcu nunc, sollicitudin efficitur urna eget, varius euismod leo. Duis a dolor ipsum. Nullam dapibus tincidunt elit nec venenatis. Sed quis ante felis.
+                                                                            Macarrão italiano delicioso.
                                                                         </p>
                                                                         <p style="text-align: justify;">Serve ? pesssoas</p>
                                                                     </div>
