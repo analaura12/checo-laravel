@@ -46,7 +46,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h4> In hac habitasse platea dictumst quisque sagittis.</h4>
+                    <h4> Com o CHE CO não é necessário esperar em filas, basta apenas reservar a refeição e a mesa, chegar e comer.</h4>
                     <div class="social-container">
                         <span class="fa-stack">
                             <a href="#your-link">
