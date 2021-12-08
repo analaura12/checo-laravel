@@ -36,7 +36,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Visibilidade do seu comércio</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua </p>
+                        <p>Quando um cliente usa o Che Co ele pode filtrar os restaurantes de acordo com a categoria, se o seu restaurante for da categoria desejada, iremos recomendá-los aos clientes para que eles possam analisar as refeições do seu comércio, isso trará uma maior visibilidade para você. Se o seu restaurante se tornar um dos destaques, podemos recomendá-lo também na página inicial do cliente.</p>
                         <a class="read-more no-line" href="">Saiba mais <span class="fas fa-long-arrow-alt-right"></span></a>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Oportunidade</h5>
-                        <p>Bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim. </p>
+                        <p>Esse website trás oportunidades para ambos os lados: para o comércio e para o cliente. Ambos poderão poupar tempo com a realização de reservas, trazendo diversos outros benefícios para ambos, incluindo a satisfação e um melhor gerenciamento das reservas (para o estabelecimento) e de tempo (para o cliente).</p>
                         <a class="read-more no-line" href="">Saiba mais <span class="fas fa-long-arrow-alt-right"></span></a>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Reserve seus pedidos com antecedência!</h5>
-                        <p>At ultrices mi tempus imperdiet nulla malesuada. Auctor elit sed vulputate mi sit amet. </p>
+                        <p>Com o CHE CO você pode ter sua refeição favorita e realizar encontros com os amigos no seu lugar favorito sem ter que esperar, é só fazer a reserva, com antecedência, da sua comida e mesa, chegar e aproveitar.</p>
                         <a class="read-more no-line" href="">Saiba mais <span class="fas fa-long-arrow-alt-right"></span></a>
                     </div>
                 </div>
