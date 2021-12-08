@@ -70,7 +70,7 @@ class EstablishmentProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::find($id);
+        $product = Product::find($id)->orderBy('id', 'desc');
         return view('establishment.product.edit')->with(compact('product'));
     }
 
@@ -92,8 +92,10 @@ class EstablishmentProductController extends Controller
 
         if(isset($req['image']) && $req['image'] != null){
             $req['image'] = $convertBase64($req['image']);
+            unset($req['image_old']);
         }else{
             $req['image'] = $req['image_old'];
+            unset($req['image_old']);
         }
 
         $product = Product::find($id)->update($req);
