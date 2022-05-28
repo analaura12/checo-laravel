@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\StatusReserve;
 use App\Models\User;
 use App\Models\Table;
+use App\Models\EvaluateUser;
 
 use Illuminate\Http\Request;
 
@@ -103,5 +104,15 @@ class EstablishmentReserveController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function avaliable(Request $request)
+    {   
+        $evaluate = EvaluateUser::create($request->evaluate);
+        if($evaluate != true){
+            return redirect()->back()->with('error', 'Erro ao avaliar o estabelecimento!');
+        }
+
+        return redirect()->back()->with('reserve')->with('success', 'Avaliação feita com sucesso!'); 
     }
 }

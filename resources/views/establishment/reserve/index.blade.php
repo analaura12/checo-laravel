@@ -121,9 +121,16 @@
                                                                             <i class="fas fa-check-double"></i>
                                                                         </a>
                                                                         @endif
+                                                                        @if($res->status_id == 4)
+                                                                        <a class="btn btn-info" title="Avaliar Cliente"
+                                                                        data-toggle="modal" data-target="#avaliable-{{$res->id}}">
+                                                                            <i class="fas fa-star"></i>
+                                                                        </a>
+                                                                        @endif
                                                                     </td>
                                                                 </tr>
                                                                 @include('establishment.reserve.modal')
+                                                                @include('establishment.reserve.avaliate')
                                                             @endforeach
                                                         @else
                                                             <h5>Não há reservas.</h5>
@@ -143,3 +150,8 @@
             </div>
         </div>
     @endsection
+    <script>
+    function setNumber(number){
+        $("#classificacao").val(number);
+    }
+</script>

@@ -22,6 +22,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::prefix('/reserve')->group(function($router){
         Route::get('/', ['as' => 'user.reserve', 'uses' => 'App\Http\Controllers\UserReserveController@index']);
         Route::get('/update/{id}', ['as' => 'reserve.update', 'uses' => 'App\Http\Controllers\UserReserveController@update']);
+        Route::post('/avaliable', ['as' => 'reserve.avaliable', 'uses' => 'App\Http\Controllers\UserReserveController@avaliable']);
     }); 
     Route::prefix('/management-reserve')->group(function($router){
         Route::get('/{id}', ['as' => 'user.management.reserve', 'uses' => 'App\Http\Controllers\UserManagementReserveController@index']);
@@ -61,8 +62,9 @@ Route::group(['middleware' => 'establishment'], function () {
             #Visualização de Reservas
              Route::prefix('/reserve')->group(function ($router) {
                 Route::get('/', ['as' => 'reserve', 'uses' => 'App\Http\Controllers\EstablishmentReserveController@index']);
-                  #Abaixo dessa linha, deve ter a rota de update de status reserva
+                #Abaixo dessa linha, deve ter a rota de update de status reserva
                 Route::get('/update/{id}/{status_id}', ['as' => 'status.update', 'uses' => 'App\Http\Controllers\EstablishmentReserveController@update']);
+                Route::post('/avaliable', ['as' => 'reserve.avaliable', 'uses' => 'App\Http\Controllers\EstablishmentReserveController@avaliable']);
             });
         });
     });

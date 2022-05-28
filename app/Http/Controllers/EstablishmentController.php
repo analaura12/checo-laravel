@@ -71,13 +71,12 @@ class EstablishmentController extends Controller
             'email' => 'required|min:3|max:100',
             'password' => 'required|min:8',
         ]);
-
+        
         if($validator->fails()){
             return redirect()->back()->withErrors($validator)->withInput();
         }
-
-        $credentials  = ['email' => $request->get('email'), 'password' => $request->get('password')];
         
+        $credentials  = ['email' => $request->get('email'), 'password' => $request->get('password')];    
 
         if(!auth()->guard('establishment')->attempt($credentials)){
             return redirect()->back()->withErrors(['errors' => 'Login Inválido'])->withInput();

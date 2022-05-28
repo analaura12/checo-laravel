@@ -89,7 +89,7 @@
                                                                             <span class="red"><i class="fas fa-calendar-times" title="Cancelada"></i></span>
                                                                             @break
                                                                         @default
-                                                                        <span class="green"><i class="fas fa-calendar-day" title="Em andamento"></i></span>
+                                                                            <span class="green"><i class="fas fa-calendar-day" title="Em andamento"></i></span>
                                                                     @endswitch
                                                                 </td>
                                                                 <td>
@@ -99,8 +99,14 @@
                                                                             <i class="fas fa-times"></i>
                                                                         </a>
                                                                     @endif
+                                                                    @if($res->status_id == 4)
+                                                                        <a class="btn btn-primary" title="Avaliar"  data-toggle="modal" data-target="#avaliable-{{$res->id}}">
+                                                                            <i class="fas fa-star"></i>
+                                                                        </a>
+                                                                    @endif
                                                                 </td>
                                                             </tr>
+                                                            @include('user.reserve.modal')
                                                         @endforeach
                                                     @else
                                                         <h5>Não há reservas.</h5>
@@ -127,3 +133,9 @@
         </div>
     </div>
 @endsection
+
+<script>
+    function setNumber(number){
+        $("#classificacao").val(number);
+    }
+</script>

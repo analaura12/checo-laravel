@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\User;
 use App\Models\Table;
 use App\Models\StatusReserve;
+use App\Models\EvaluateEstablishment;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash; 
@@ -44,5 +45,13 @@ class UserReserveController extends Controller
 
         return redirect()->back()->with('reserve')->with('success', 'Reserva cancelada com sucesso!'); 
     }
+    public function avaliable(Request $request)
+    {   
+        $evaluate = EvaluateEstablishment::create($request->evaluate);
+        if($evaluate != true){
+            return redirect()->back()->with('error', 'Erro ao avaliar o estabelecimento!');
+        }
 
+        return redirect()->back()->with('reserve')->with('success', 'Avaliação feita com sucesso!'); 
+    }
 }
