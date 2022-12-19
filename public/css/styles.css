@@ -1402,5 +1402,12 @@ a:hover {
     border-radius: 0px 0px 10px 10px !important;
 }
 
+.card-h1{
+    font-size: 20px;
+    font-weight: 700;
+    color: #202020;
+    text-align: center;
+    align-items: center;
+}
 
-/* end of min-width 1200px */
+

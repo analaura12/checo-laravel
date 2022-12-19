@@ -17,6 +17,7 @@
                                             apenas
                                             reservar a refeição e
                                             a mesa, chegar e comer.</p><br>
+                                        <p  class="card-h1">Escolha um dos estabelecimentos listados abaixo e faça sua reserva!</p>
                                         <div class="container text-center">
                                             <div id="services" class="cards-1 bg-red">
                                                 <div class="container">
