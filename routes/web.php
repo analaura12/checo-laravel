@@ -66,6 +66,7 @@ Route::group(['middleware' => 'establishment'], function () {
                 Route::get('/update/{id}/{status_id}', ['as' => 'status.update', 'uses' => 'App\Http\Controllers\EstablishmentReserveController@update']);
                 Route::post('/avaliable', ['as' => 'reserve.avaliable', 'uses' => 'App\Http\Controllers\EstablishmentReserveController@avaliable']);
             });
+            Route::get('/rating', ['as' => 'rating', 'uses' => 'App\Http\Controllers\EstablishmentController@rating']);
         });
     });
 });

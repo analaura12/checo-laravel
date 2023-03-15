@@ -22,11 +22,13 @@
                     <a class="dropdown-item preview-item">
                         <div class="preview-thumbnail">
                             <div class="preview-icon bg-success">
-                                <i class="ti-info-alt mx-0"></i>
+                              <i class="ti-info-alt mx-0"></i>
                             </div>
                         </div>
                         <div class="preview-item-content">
-                            <h6 class="preview-subject font-weight-normal">Existem reservas pendentes para aprovação </h6>
+                            <h6 class="preview-subject font-weight-normal">
+                              Existem reservas pendentes para aprovação 
+                            </h6>
                             <p class="font-weight-light small-text mb-0 text-muted">
                                 Agora pouco
                             </p>

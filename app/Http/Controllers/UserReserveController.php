@@ -47,11 +47,20 @@ class UserReserveController extends Controller
     }
     public function avaliable(Request $request)
     {   
-        $evaluate = EvaluateEstablishment::create($request->evaluate);
-        if($evaluate != true){
-            return redirect()->back()->with('error', 'Erro ao avaliar o estabelecimento!');
-        }
+        $request->validate([
+            'user_id'          => 'required',
+            'establishment_id'         => 'required',
+            'evaluate_score'        => 'required',
+        ]);
 
-        return redirect()->back()->with('reserve')->with('success', 'Avaliação feita com sucesso!'); 
+
+        $evaluate = new EvaluateEstablishment;
+        $evaluate->user_id = $request->user_id;
+        $evaluate->establishment_id = $request->establishment_id;
+        $evaluate->evaluate_score = $request->evaluate_score;
+        $evaluate->description = $request->description;
+        $evaluate->save();
+
+        return response()->json(['success'=>true]);
     }
 }

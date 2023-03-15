@@ -25,7 +25,7 @@
                                 <p class="fw-light mb-4 pb-2">Comentários deixados pelos clientes</p> --}}
                                 <div class="d-flex flex-start">
                                   <img class="rounded-circle shadow-1-strong me-3"
-                                    src="http://assets.stickpng.com/images/585e4bf3cb11b227491c339a.png" alt="avatar" width="60"
+                                    src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png" alt="avatar" width="60"
                                     height="60" />
                                   <div>
                                     <h6 class="fw-bold mb-1">{{$evaluate->user->name}}</h6>
@@ -35,9 +35,9 @@
                                         </p>
                                     </div>
                                     <p class="mb-0">
-                                        {{$evaluate->description}}
-                                        <br>
-                                        {{$evaluate->created_at}}
+                                      <b>Mensagem:</b> {{$evaluate->description}}
+                                      <br>
+                                      <b>Data da Avaliação:</b> {{$evaluate->created_at->format('d/m/Y')}}
                                     </p>
                                   </div>
                                 </div>

@@ -9,34 +9,68 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{route('reserve.avaliable')}}" method="POST">
-                    @csrf
-                    <input type="hidden" name="evaluate[user_id]" value={{$res->user_id}}>
-                    <input type="hidden" name="evaluate[establishment_id]" value={{$res->establishment_id}}>
-                    <input type="hidden" name="evaluate[evaluate_score]" id="classificacao">
-                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
-                        <label>Avalie o cliente</label>
-                        <div class="btn-group mr-2" role="group" aria-label="Primeiro grupo">
-                            <button type="button" id="btn1" class="btn btn-secondary" onclick="setNumber(1)">1</button>
-                            <button type="button" id="btn2" class="btn btn-secondary" onclick="setNumber(2)">2</button>
-                            <button type="button" id="btn3" class="btn btn-secondary" onclick="setNumber(3)">3</button>
-                            <button type="button" id="btn4" class="btn btn-secondary" onclick="setNumber(4)">5</button>
-                            <button type="button" id="btn5" class="btn btn-secondary" onclick="setNumber(5)">6</button>
-                            <button type="button" id="btn6" class="btn btn-secondary" onclick="setNumber(6)">7</button>
-                            <button type="button" id="btn7" class="btn btn-secondary" onclick="setNumber(7)">8</button>
-                            <button type="button" id="btn8" class="btn btn-secondary" onclick="setNumber(8)">9</button>
-                        </div>
+                <div id="successMsg"></div>
+                @csrf
+                <input type="hidden" value={{$res->user_id}} id="user_id">
+                <input type="hidden" value={{$res->establishment_id}} id="establishment_id">
+                <input type="hidden" id="score">
+                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar com grupos de botões">
+                    <div class="btn-group mr-2" role="group" aria-label="Primeiro grupo">
+                        <button type="button" id="btn1" class="btn btn-secondary" onclick="setNumber(1)">1</button>
+                        <button type="button" id="btn2" class="btn btn-secondary" onclick="setNumber(2)">2</button>
+                        <button type="button" id="btn3" class="btn btn-secondary" onclick="setNumber(3)">3</button>
+                        <button type="button" id="btn4" class="btn btn-secondary" onclick="setNumber(4)">5</button>
+                        <button type="button" id="btn5" class="btn btn-secondary" onclick="setNumber(5)">6</button>
+                        <button type="button" id="btn6" class="btn btn-secondary" onclick="setNumber(6)">7</button>
+                        <button type="button" id="btn7" class="btn btn-secondary" onclick="setNumber(7)">8</button>
+                        <button type="button" id="btn8" class="btn btn-secondary" onclick="setNumber(8)">9</button>
                     </div>
-                    <div class="form-group mt-2">
-                        <label for="exampleFormControlTextarea1">Adicione um comentário</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" name="evaluate[description]" rows="3"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        <button class="btn btn-primary" type="submit">Avaliar</button>
-                    </div>
-                </form>
+                </div>
+                <div class="form-group mt-2">
+                    <label for="exampleFormControlTextarea1">Adicione um comentário</label>
+                    <textarea class="form-control" id="description" rows="3"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                    <button class="btn btn-primary" type="submit" onclick="submit()">Avaliar</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    function setNumber(number){
+        document.getElementById("score").value = number;
+    }
+
+    function submit(){
+        var host = "{{URL::to('/')}}";  
+        var user_id = document.getElementById("user_id").value;
+        var establishment_id = document.getElementById("establishment_id").value;
+        var description = document.getElementById("description").value;
+        var score = document.getElementById("score").value;
+
+        $.ajax({
+            url: host+"/establishment/reserve/avaliable",
+            type:"POST",
+            data:{
+                "_token": "{{ csrf_token() }}",
+                user_id: user_id, 
+                establishment_id: establishment_id, 
+                description: description,
+                evaluate_score: score
+            },
+            success:function(response){
+                alert('Avaliação registrada com sucesso!');
+                if(response.success){
+                    description.value = '';
+                    score.value = '';
+                }
+            },
+            error: function(response) {
+                console.log(response);
+            },
+        });
+    }
+</script>

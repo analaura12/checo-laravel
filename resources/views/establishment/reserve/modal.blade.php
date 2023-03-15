@@ -34,7 +34,7 @@
           <p>Preço: {{$res->Product->price}}</p>
           <hr>
 
-          <h4 class=""<strong>Status da reserva</strong></h4>
+          <h4 class=""><strong>Status da reserva</strong></h4>
           <br>
           <p>{{$res->Status->description}}</p>
           <hr>

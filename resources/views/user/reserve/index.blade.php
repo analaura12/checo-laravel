@@ -134,8 +134,3 @@
     </div>
 @endsection
 
-<script>
-    function setNumber(number){
-        $("#classificacao").val(number);
-    }
-</script>

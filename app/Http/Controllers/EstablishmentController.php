@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Establishment;
-
+use App\Models\EvaluateEstablishment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -89,5 +89,10 @@ class EstablishmentController extends Controller
         auth()->guard('establishment')->logout();
 
         return redirect()->route('establishment.login');
+    }
+
+    public function rating(){
+        $ratings = EvaluateEstablishment::where('establishment_id', '=', auth()->guard('establishment')->user()->id)->with('User')->get();
+        return view('establishment.rating.index')->with(compact('ratings'));
     }
 }
